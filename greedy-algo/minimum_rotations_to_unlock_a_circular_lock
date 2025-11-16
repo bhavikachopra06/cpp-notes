@@ -1,0 +1,20 @@
+class Solution {
+  public:
+    int rotationCount(long long R, long long D) {
+        
+        int key1 = 0;
+        int key2 = 0;
+        int minR = 0;
+        
+        while(R!=0 && D!=0){
+            key1 = R%10;
+            key2 = D%10;
+            int mins = min(abs(key1-key2) , 10-abs(key1-key2));
+            minR = minR + mins;
+            R = R/10;
+            D = D/10;
+        }
+        
+        return minR;
+    }
+};
