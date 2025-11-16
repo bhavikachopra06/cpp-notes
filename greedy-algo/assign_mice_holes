@@ -1,0 +1,17 @@
+class Solution {
+  public:
+    int assignHole(vector<int>& mices, vector<int>& holes) {
+        
+        sort(mices.begin(), mices.end());
+        sort(holes.begin(),holes.end());
+
+        int maxSpeed = INT_MIN;
+        int speed = 0;
+        
+        for(int i=0; i<mices.size(); i++){
+            speed = abs(holes[i] - mices[i]);
+            maxSpeed = max(speed,maxSpeed);
+        }
+        return maxSpeed;
+    }
+};
