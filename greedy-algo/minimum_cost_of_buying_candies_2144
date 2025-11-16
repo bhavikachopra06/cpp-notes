@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int minimumCost(vector<int>& cost) {
+    
+        sort(cost.begin(), cost.end(), greater<int>());
+        int i = 0;
+        int price = 0;
+
+        while(i<cost.size()){
+            if(i+1 < cost.size()){
+                price = price + cost[i] + cost[i+1];
+            }else{
+                price = price + cost[i];
+            }
+            i = i+3;
+        }
+        return price;
+    }
+};
